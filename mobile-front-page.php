@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Mobile Front Page
-Plugin URI: https://www.themevan.com/item/mobile-front-page
+Plugin URI: https://www.themevan.com/
 Author: ThemeVan
 Author URI: https://www.themevan.com
-Version: 1.0
-Description: You can set the different front page for the mobile devices.
+Version: 1.0.0
+Description: You can set the different front page for the mobile devices quickly.
 Text Domain: mfp
 */
 
@@ -168,7 +168,7 @@ if(!class_exists('MobileFrontPage')){
 				}
 			}
 
-			 if(isset($page_id) && trim($page_id) !== '' && is_home() || is_front_page()){
+			 if($detect->isMobile() && isset($page_id) && trim($page_id) !== '' && is_home() || is_front_page()){
 			    wp_redirect(get_permalink($page_id), 302);
 			    die();
 			 }
